@@ -1,0 +1,19 @@
+clear all;
+close all;
+clc;
+
+Low = imread('filtB.jpg');
+Low = double(Low);
+imshow(Low);
+title('Original Low Pass filter')
+figure;
+
+High = imread('filtW.jpg');
+High = double(High);
+imshow(High);
+title('Original High Pass filter')
+figure;
+
+D = imread('l.jpg');
+imshow(D);
+title('Original image');
