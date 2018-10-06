@@ -17,3 +17,25 @@ figure;
 D = imread('l.jpg');
 imshow(D);
 title('Original image');
+
+D = double(D);
+
+d = length(D);
+figure;
+
+%figure;
+S=fftshift(fft2(Low));
+S2=fftshift(fft2(High));
+filL = S(d).*D;
+filH = S2(d).*D;
+S1=fftshift(ifft2(filL));
+S3=fftshift(ifft2(filH));
+imshow(uint8(S1));
+title('Low Pass Filtered Image');
+figure;
+imshow(uint8(S3));
+title('High Pass Filtered Image');
+
+%C = Low(d).*S1;
+%C1 = ifft2(fftshift(C));
+%imshow(uint8(C1));
